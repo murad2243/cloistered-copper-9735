@@ -4,9 +4,428 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chill TV</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #maxWidth{
+            width: 1680px;
+            margin: auto;
+        }
+        #navbar{
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            width: 100%;
+            height: 45px;
+            margin: auto;
+            display: flex;
+            padding: 3px;
+            background-color: #000;
+            color: white;
+        }
+        .search{
+            height: 20px;
+            
+            background-color: #a3a3a3;
+        }
+        #searchIp{
+            height: 20px;
+            width: 130px;
+            margin-left: 8px;
+            background-color: #000;
+            border: 0px black solid;
+        }
+        #navSearch{
+            border: 1px white solid;
+            border-radius: 5px;
+            padding: 3px;
+            height: 23px;
+            margin-top: 5px;
+            width: fit-content;
+            display: flex;
+            background-color: #000;
+        }
+        .flex{
+            display: flex;
+            margin-right: 30px;
+            max-height: 40px;
+            justify-content: end;
+        }
+        #profile{
+            height: 25px;
+            border-radius: 50%;
+            margin-left: 10px ;
+            margin-top: 12px;
+        background-color: white;
+        visibility: hidden;
+        }
+        #Signin > img{
+            height: 25px;
+            border-radius: 50%;
+            margin: 3px ;
+            margin-top: 5px;
+        background-color: white;
+        }
+        #Signin{
+            cursor: pointer;
+            display: flex;
+            line-height: 35px;
+            background-color: #0a84ff;
+            border-radius: 10px;
+            height: 32px;
+            width: 80px;
+            padding: 0px 10px;
+            margin: 5px   ;
+        }
+    
+        #singinPopup{
+            z-index: 100;
+            visibility: hidden;
+            background-color: #333;
+            top: 10%;
+            left: 30%;
+            width: 30%;
+            padding: 50px;
+            border-radius: 10px;
+            position: absolute;
+            align-items: center;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+        }
+        .inbox{
+            height: 20px;
+            margin: 10px;
+            padding: 10px;
+            width: 60%;
+            border-radius: 5px;
+        }
+        #SignInForm > button{
+            height: 40px;
+        }
+        .submit:hover{
+            height: 40px;
+            width: 25%;
+        }
+        .submit{
+            margin: 10px 100px;
+            width: 25%;
+            border: #0a84ff 1px solid;
+            height: 32px;
+            border-radius: 10px;
+            background-color: #0a84ff;
+            color: aliceblue;
+        }
+        #creatId:hover{ 
+            font-weight: 800;
+        }
+        .mainLogo{
+            height: 40px;
+        }
+
+        #navLogo{
+            text-align: center;
+            width: 90%;
+        }
+
+
+
+        #hero{
+            visibility: hidden;
+            margin-top: 300px;
+            width: 100%;
+            /* height: 300px; */
+            background-image: linear-gradient(rgba(12,3,51,0.3),gba(12,3,51,0.3));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #hero > div{
+            color: white;
+            width: 80%;
+            display: flex;
+            gap: 50px;
+            justify-content: space-between;
+            height: auto;
+            position: absolute;
+            margin-top: 500px;
+            text-align: center;
+            font-size: large;
+            /* padding: 20px 8%; */
+         
+           
+        }
+        
+        .back-video{
+           
+            width: 100%;
+            position: absolute;
+            z-index: -100;
+        }
+        .videoText{
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            margin: 10px;
+            width: 180px;
+            cursor: pointer;
+            padding: 10px;
+            font-weight: 800;
+        }
+        .info{
+            margin-top: 30px;
+            text-align: left;
+        }
+        #banners{
+            width: 100%;
+            overflow: hidden;
+            height: 600px;
+            position: absolute;
+            margin-top: -300px;
+            background-size: 100% 800px;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="maxwidth">
+        <div id="navbar">
+            <div id="navLogo">
+                <img class="mainLogo" src="imgs\verticle logo.png" alt="">
+            </div>
+            
+            
+            <div class="flex">
+                <div id="navSearch">
+                    <img class="search" src="imgs\search.png" alt="">
+                    <input id="searchIp" type="text" placeholder="Search">
+                </div>
+                <img id="profile"  src="https://img.icons8.com/material/512/user-male-circle--v1.png" alt="">
+           
+                <div onclick="show()" id="Signin">
+                    <img  src="https://img.icons8.com/material/512/user-male-circle--v1.png" alt="">
+                    <p>Sign In</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div id="singinPopup">
+            
+            <h2>Sign in width your Chill ID</h2>
+            <p>You will be signed in to Apple TV and Apple Music</p>
+            <form id="SignInform">
+                <input placeholder="Email" class="inbox" id="email" type="email">
+            <input type="password" class="inbox" placeholder="Password" id="password">
+            <button class="submit" type="submit">Sing In</button>
+
+            </form>
+            
+
+            <br><br>
+            <div id="creatId" onclick="createNew()"> Creat new Chill ID  </div>
+
+        </div>
+        
+         <div id="hero"> 
+
+            
+            <video class="back-video" autoplay loop muted plays-inline>
+                
+                <source class="vedio" src="https://rr4---sn-npoe7nsl.googlevideo.com/videoplayback?expire=1671057199&ei=z_qZY-GwBsOFvdIPm4ClwAg&ip=216.131.114.102&id=o-AMS4o-efHDzHqtqY7E1zKyxQhsHpLk_ZvrnHN-EXagX4&itag=135&aitags=133%2C134%2C135%2C136%2C137%2C160%2C242%2C243%2C244%2C247%2C248%2C278%2C394%2C395%2C396%2C397%2C398%2C399&source=youtube&requiressl=yes&spc=zIddbKqYfeVqOmE9e4BNA2DSJwTDzjs&vprv=1&mime=video%2Fmp4&ns=RRLJqgOZrZJ2J6cfmiZeD5wK&gir=yes&clen=2291336&dur=68.067&lmt=1620023164314131&keepalive=yes&fexp=24001373,24007246&c=WEB&txp=5535434&n=g4zY4GyUbzjSDg&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cspc%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIgEeiXqtSmeqPIbZg4mj7J55_BIlvtvmfhQTtSOcSwA_8CIQDN-7OLVd8oR78qJFkL91knxF2OapSDIB2dyhr9iYR2Sg%3D%3D&redirect_counter=1&cm2rm=sn-4g5e6y7e&req_id=a797d2f35852a3ee&cms_redirect=yes&cmsv=e&mh=Bg&mip=2409:4071:d8d:b8e1:b9d7:96c4:21f3:5033&mm=34&mn=sn-npoe7nsl&ms=ltu&mt=1671036297&mv=m&mvi=4&pl=48&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgBbUG_DMmnCNXQ6LotQxznyrFjNSSF-tReKQGsxn3lhUCIAIniKb_T9B6X5J_iuEgjuVgDpQYdfuf8K8yk9S9Xoo9" type="video/mp4">
+            </video> 
+            <div>
+                
+                <div>
+                    <p>7 days free, then $6.99/month</p>
+                    <div class="videoText">
+                        Start Free Trial
+                    </div>
+                    <div class="videoText">
+                        + Add to Up Next
+                    </div>
+                </div>
+                <div>
+                    <p class="info">Imagine Charles Dickens’ heartwarming tale of a scrooge visited by four ghosts on Christmas Eve—but funnier. And with Will Ferrell, Ryan Reynolds, and Octavia Spencer. Also, huge musical numbers. Okay, we’re asking a lot. Maybe just watch the trailer?</p>
+                </div>
+            </div>
+        </div> 
+
+        <div id="banners">
+
+        </div>
+
+    </div>
+   
 </body>
 </html>
+<script>
+    let singinPopup = document.getElementById("singinPopup");
+    let checkSign = false;
+
+
+    function show(){
+        singinPopup.style.visibility="visible"
+        console.log('asld');
+    }
+
+    let signinBtn = document.getElementById("Signin");
+    signinBtn.addEventListener("click",()=>{
+        console.log("cejc");
+       
+        singinPopup.style.visibility="visible"
+    })
+
+    function check(){
+        let check =false;
+        signData.forEach(element => {
+            if(element.email == SignInform.email.value && element.password == SignInform.password.value){
+                check=true;
+
+            }
+            // console.log( SignInform.email.value);
+        });
+        if(check == true){
+            alert("Sign In Seccussfull");
+            singinPopup.style.visibility="hidden";
+            checkSign=true;
+        }
+        else{
+            alert("Wrong credentials")
+        }
+       checkS()
+    }
+
+    let signData = JSON.parse(localStorage.getItem("signData"))||[];
+
+        let SignInform = document.getElementById("SignInform")
+
+        SignInform.addEventListener("submit",(event)=>{
+            event.preventDefault();
+            // console.log(signData);
+
+           check();
+        })
+
+        function createNew(){
+            singinPopup.innerHTML=null
+            let h2 = document.createElement("h2");
+            h2.innerText="Create Apple ID"
+            let name = document.createElement("input");
+            name.placeholder = "Full Name";
+            name.setAttribute("class","inbox");
+
+
+            let DOB = document.createElement("input")
+            DOB.setAttribute("class","inbox");
+            DOB.setAttribute("type","date")
+            DOB.placeholder="Date of birth";
+            let email = document.createElement("input");
+            email.setAttribute("class","inbox");
+            email.setAttribute("type","email")
+            email.placeholder="Your email will be your Chill ID";
+            let password = document.createElement("input")
+            password.placeholder="Password";
+            password.setAttribute("type","password")
+            password.setAttribute("class","inbox");
+            let h3 = document.createElement("h3");
+            h3.innerText="Agree to Term & Condition";
+
+            let create = document.createElement("button");
+            create.innerText="Create";
+            create.setAttribute("class","submit")
+            create.onclick = ()=>{
+                let obj ={
+                    email:email.value,
+                    password:password.value
+                }
+                signData.push(obj);
+                localStorage.setItem("signData",JSON.stringify(signData));
+
+                let h2 = document.createElement("h2");
+                h2.innerText= "Sign in with your Chill Id "
+                let p = document.createElement("p")
+                p.innerText="You will be signed in to Chill Tv";
+                let Email = document.createElement("input");
+            Email.setAttribute("class","inbox");
+            Email.setAttribute("type","email")
+            Email.placeholder="Email";
+            let Password = document.createElement("input")
+            Password.placeholder="Password";
+            Password.setAttribute("type","password")
+            Password.setAttribute("class","inbox");
+                let btn = document.createElement("button");
+                btn.innerText="Sign In";
+                btn.setAttribute("class","submit")
+                btn.onclick = ()=>{
+                    console.log(signData);
+                    console.log(Email.value, Password.value);
+                    let check =false;
+                     signData.forEach(el => {
+                        console.log(el);
+                    if(el.email == Email.value && el.password == Password.value){
+                     check=true;
+
+                    }
+            // console.log( SignInform.email.value);
+                     });
+                      if(check == true){
+                      alert("Sign In Seccussfull");
+                      singinPopup.style.visibility="hidden"
+                      checkSign=true;
+                      checkS()
+                     }
+                      else{
+                          alert("Wrong credentials")
+                                     }
+                       }
+                
+                       
+
+                singinPopup.innerHTML=null;
+                singinPopup.append(h2,p,Email,Password,btn)
+            
+            
+                
+            }
+
+            singinPopup.append(h2,name,DOB,email,password,h3,create);
+
+        }
+
+function checkS(){
+    if(checkSign==true){
+                  let profile = document.getElementById("profile")
+                     profile.style.visibility= "visible"
+
+                    signinBtn.style.visibility="hidden";
+
+        }
+}
+
+let banners = document.getElementById("banners")
+
+let bannerImg =[
+    "https://is3-ssl.mzstatic.com/image/thumb/Features112/v4/bb/2c/ae/bb2cae80-b4e9-7193-8a4f-fb1129ad59ca/278c3382-c095-47b3-ba19-d82887d8b13a.png/999x562sr.jpg",
+    "https://is4-ssl.mzstatic.com/image/thumb/NaFleiZvmz9gqpETRJnDUg/1679x945sr.jpg",
+    "https://is4-ssl.mzstatic.com/image/thumb/W7AlkGeFDoNW-APn5MIZtg/999x562sr.jpg",
+    "https://is1-ssl.mzstatic.com/image/thumb/Okrfj3Lmub7fZvSoRpCJ5w/999x562sr.jpg",
+    "https://is4-ssl.mzstatic.com/image/thumb/Features122/v4/32/ea/45/32ea45df-fa28-8d39-ce51-e88dffb2e093/df69dd87-4e4d-4612-a883-efb566c7fc7e.png/999x562sr.jpg"
+]
+
+let count=0;
+let hero = document.getElementById("hero");
+setInterval(()=>{
+    banners.style.backgroundImage =`url(${bannerImg[count]})`;
+    count++;
+    if(count==4){
+        hero.style.visibility="visible"
+        banners.style.visibility= "hidden"
+    }
+},2000)
+</script>
