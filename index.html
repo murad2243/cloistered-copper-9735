@@ -7,11 +7,14 @@
     <title>Chill TV</title>
     <style>
         *{
+            font-family: 'Times New Roman', Times, serif;
             margin: 0px;
             padding: 0px;
         }
-        #maxWidth{
+        .maxWidth{
+            font-family: 'Times New Roman', Times, serif;
             width: 1680px;
+            background-color: #333;
             margin: auto;
         }
         #navbar{
@@ -135,11 +138,11 @@
 
         #hero{
             visibility: hidden;
-            margin-top: 300px;
+            margin-top: 0px;
             width: 100%;
-            /* height: 300px; */
+            /* height: 800px; */
             background-image: linear-gradient(rgba(12,3,51,0.3),gba(12,3,51,0.3));
-            position: relative;
+            /* position: sticky; */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -164,7 +167,7 @@
         .back-video{
            
             width: 100%;
-            position: absolute;
+            /* position: absolute; */
             z-index: -100;
         }
         .videoText{
@@ -182,18 +185,123 @@
             text-align: left;
         }
         #banners{
+           
             width: 100%;
-            overflow: hidden;
-            height: 600px;
-            position: absolute;
-            margin-top: -300px;
-            background-size: 100% 800px;
-            background-repeat: no-repeat;
+            /* overflow: hidden; */
+            /* height: 600px; */
+            /* position: absolute; */
+            margin-top: -800px;
+            /* background-size: 100% auto; */
+            /* background-repeat: no-repeat; */
         }
+      
+        .bimg{
+            width: 100%;
+            height: fit-content;
+        }
+        #bannersInfo{
+            margin-top: -100px;
+            color: white;
+            margin-left: 10%;
+            margin-top: -15%;
+            
+        }
+      
     </style>
+    <style>
+        /* @import "https://unpkg.com/open-props"; */
+/* @import "https://unpkg.com/open-props/normalize.min.css"; */
+
+
+::-webkit-scrollbar {
+  height: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #a3a3a3; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255); 
+  border-radius: 10px;
+}
+
+.sechead{
+    font-family: 'Times New Roman', Times, serif;
+
+    margin-top: 30px;
+    color: white;
+    padding: 40px;
+    background-color: #333;
+}
+
+.media-scroller {
+  display: grid;
+  background-color: #333;
+
+  
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+
+
+
+.media-element {
+  display: grid;
+background-color: #333;
+  grid-template-rows: min-content;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.media-element > img {
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
+.greyLine{
+    border-top: 1px solid #a3a3a3;
+    margin-bottom: 40px;
+}
+.title{
+    margin: 8px 0px;
+}
+#org > img{
+    width: 100%;
+    opacity: 0.4;
+    height: 600px;
+}
+#org > p{
+    
+    margin: 10px;
+    color: #dbdada;
+}
+#shodow{
+    margin: 100px;
+    margin-top: -150px;
+}
+    </style>
+    <!-- <link rel="stylesheet" href="style/slide.css"> -->
 </head>
 <body>
-    <div id="maxwidth">
+    <div class="maxwidth">
         <div id="navbar">
             <div id="navLogo">
                 <img class="mainLogo" src="imgs\verticle logo.png" alt="">
@@ -237,7 +345,7 @@
             
             <video class="back-video" autoplay loop muted plays-inline>
                 
-                <source class="vedio" src="https://rr4---sn-npoe7nsl.googlevideo.com/videoplayback?expire=1671057199&ei=z_qZY-GwBsOFvdIPm4ClwAg&ip=216.131.114.102&id=o-AMS4o-efHDzHqtqY7E1zKyxQhsHpLk_ZvrnHN-EXagX4&itag=135&aitags=133%2C134%2C135%2C136%2C137%2C160%2C242%2C243%2C244%2C247%2C248%2C278%2C394%2C395%2C396%2C397%2C398%2C399&source=youtube&requiressl=yes&spc=zIddbKqYfeVqOmE9e4BNA2DSJwTDzjs&vprv=1&mime=video%2Fmp4&ns=RRLJqgOZrZJ2J6cfmiZeD5wK&gir=yes&clen=2291336&dur=68.067&lmt=1620023164314131&keepalive=yes&fexp=24001373,24007246&c=WEB&txp=5535434&n=g4zY4GyUbzjSDg&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cspc%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIgEeiXqtSmeqPIbZg4mj7J55_BIlvtvmfhQTtSOcSwA_8CIQDN-7OLVd8oR78qJFkL91knxF2OapSDIB2dyhr9iYR2Sg%3D%3D&redirect_counter=1&cm2rm=sn-4g5e6y7e&req_id=a797d2f35852a3ee&cms_redirect=yes&cmsv=e&mh=Bg&mip=2409:4071:d8d:b8e1:b9d7:96c4:21f3:5033&mm=34&mn=sn-npoe7nsl&ms=ltu&mt=1671036297&mv=m&mvi=4&pl=48&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgBbUG_DMmnCNXQ6LotQxznyrFjNSSF-tReKQGsxn3lhUCIAIniKb_T9B6X5J_iuEgjuVgDpQYdfuf8K8yk9S9Xoo9" type="video/mp4">
+                <source class="vedio" src="imgs\backgoundVideo.m4v" type="video/mp4">
             </video> 
             <div>
                 
@@ -254,15 +362,72 @@
                     <p class="info">Imagine Charles Dickens’ heartwarming tale of a scrooge visited by four ghosts on Christmas Eve—but funnier. And with Will Ferrell, Ryan Reynolds, and Octavia Spencer. Also, huge musical numbers. Okay, we’re asking a lot. Maybe just watch the trailer?</p>
                 </div>
             </div>
-        </div> 
-
-        <div id="banners">
-
         </div>
 
+        <div id="banners">
+            <img src="https://is3-ssl.mzstatic.com/image/thumb/Features112/v4/bb/2c/ae/bb2cae80-b4e9-7193-8a4f-fb1129ad59ca/278c3382-c095-47b3-ba19-d82887d8b13a.png/999x562sr.jpg" class="bimg" alt="">
+        </div>
+        <div id="bannersInfo">
+            <h1>The Home of </h1>
+            <h1>Apple</h1>
+            <h1>Originals</h1>
+            <p>Enjoy star-studded, award-winning series, films, and more</p>
+            <h1>
+                <u>Start Free Trial</u>
+            </h1>
+            
+        </div>
+        <!-- <div style="margin-top: 900px;"></div>  -->
+
     </div>
+<div id="aftervideo">
+</div>
+
+<div class="sechead">
+    <h2 >Watch Premieres for Free</h2>
+    <div id="premiere" class="media-scroller snaps-inline">
+      </div>
+      <hr class="greyLine">
+      <h2>Most Popular</h2>
+      <div id="MostPopular" class="media-scroller snaps-inline">
+    </div>
+    <hr class="greyLine">
+
+    <h2>Watch Entire Seasons</h2>
+      <div id="EntireSeasons" class="media-scroller snaps-inline">
+    </div>
+    <hr class="greyLine">
+    <h2>Latest Originals</h2>
+      <div id="Originals" class="media-scroller snaps-inline">
+    </div>
+    <hr class="greyLine">
+    <h2>Current Hits & Future Releases</h2>
+      <div id="Hits" class="media-scroller snaps-inline">
+    </div>
+    <hr class="greyLine">
+
+    <div id="org">
+        
+        <img src="imgs\Spirited_Photo_0104.jpg" alt="">
+        
+        <div id="shodow">
+            <p>TIS THE SEASON</p>
+            <h1>Celebrate With Apple Originals</h1>
+        <p>Gather your family and get in the sprit with </p>
+        <p>Festive films, specials and episode.</p>
+        </div>
+    </div>
+
+    <h2>Historical Dramas</h2>
+      <div id="Historical" class="media-scroller snaps-inline">
+    </div>
+    <hr class="greyLine">
+</div>
+
    
+    
 </body>
+<script src="js/data.js"></script>
 </html>
 <script>
     let singinPopup = document.getElementById("singinPopup");
@@ -420,12 +585,29 @@ let bannerImg =[
 
 let count=0;
 let hero = document.getElementById("hero");
-setInterval(()=>{
-    banners.style.backgroundImage =`url(${bannerImg[count]})`;
+let aftervideo = document.getElementById("aftervideo")
+let ban= setInterval(()=>{
+    banners.innerHTML=null
+    let img = document.createElement("img")
+    img.src= bannerImg[count];
+    img.setAttribute("class","bimg");
+    banners.append(img)
+    // banners.style.backgroundImage =`url(${bannerImg[count]})`;
     count++;
-    if(count==4){
+    if(count==6){
         hero.style.visibility="visible"
+        aftervideo.style.height= "700px";
         banners.style.visibility= "hidden"
+        // banners.style.margin = " 10px"
+        clearInterval(ban);
+        count=0;
+
+        
     }
-},2000)
+},3000)
+
+
+
+
+
 </script>
