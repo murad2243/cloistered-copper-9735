@@ -258,6 +258,7 @@ HitsData.forEach((le)=>{
     div.setAttribute("class","media-element");
     let img= document.createElement("img");
     img.src=le.img;
+    // div.setAttribute("class","hitImg")
     
     div.append(img)
 // console.log(div);
