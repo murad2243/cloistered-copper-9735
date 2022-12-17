@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="imgs\chillTv.png">
+
+    <link rel="stylesheet" href="style/slide.css">
+    <style>
+
+
+        
+.bottomMenu {
+    position: fixed;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    height: 60px;
+    background: #262629;
+    padding: 20px;
+    padding: right 150px; ;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    transition: all .5s;
+}
+.hide {
+    opacity:0;
+   
+}
+.show {
+    opacity:1;
+  
+}
+    ::-webkit-scrollbar {
+  height: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #a3a3a3; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255); 
+  border-radius: 10px;
+}
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #navbar{
+            position: sticky;
+            /* z-index: 1000; */
+            top: 0;
+            width: 99.5%;
+            height: 45px;
+            margin: auto;
+            display: flex;
+            padding: 3px;
+            background-color: #000;
+            color: white;
+        }
+        .search{
+            height: 20px;
+            background-color: #a3a3a3;
+        }
+        #searchIp{
+            height: 20px;
+            width: 130px;
+            margin-left: 8px;
+            background-color: #000;
+            border: 0px black solid;
+        }
+        #navSearch{
+            border: 1px white solid;
+            border-radius: 5px;
+            padding: 3px;
+            height: 23px;
+            margin-top: 5px;
+            width: fit-content;
+            display: flex;
+            background-color: #000;
+        }
+        .flex{
+            display: flex;
+            margin-right: 30px;
+            max-height: 40px;
+            justify-content: end;
+        }
+        #profile{
+            height: 25px;
+            border-radius: 50%;
+            margin-left: 10px ;
+            margin-top: 10px;
+        background-color: white;
+        
+        }
+        
+        
+        .mainLogo{
+            height: 40px;
+        }
+
+        #navLogo{
+            text-align: center;
+            width: 90%;
+        }
+        #bgimg{
+            margin: auto;
+            width: 99.7%;
+            border: 10px;
+            height: 700px;
+            
+            border: #000 1px solid;
+            background-repeat: no-repeat;
+            background-size: cover;
+      
+        }
+        #afterbanner{
+            padding: 30px;
+            background-color: #2d2d2d
+            
+        }
+
+        #bgText{
+            width: 85%;
+            /* position: static; */
+            color: rgb(5, 5, 5);
+            /* margin: 50px; */
+            color: white;
+            display: flex;
+            margin-top: -220px;
+            padding: 10px;
+        }
+        .freeTrial{
+            text-align: center;
+            width: 40%;
+        }
+         .btnfree{
+            /* position: static; */
+            height: 40px;
+            margin-top: 50px;
+            /* padding: 8px; */
+            padding-top: 15px;
+            margin: 10px;
+            font-weight: 800;
+            border-radius: 5px;
+            background-color: white;
+            color: #000;
+        } 
+        #secondDiv{
+            margin-top: 80px;
+        }
+        #secondDiv > div{
+            color: #cacaca;
+            font-weight: 800;
+            margin-top: 20px;
+        }
+        #lastDiv{
+            margin-top: 50px;
+            width: 25%;
+            /* margin-right: 10%; */
+        }
+        .trailer{
+            color: white ;
+            margin: 10px;   
+        }
+        .trailer > img{
+            width: 260px;
+            margin-left: -10px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        .vrline{
+            /* margin-top: 10px; */
+            border: #333 solid 1px;
+        }
+       #watchTV{
+        background-color: rgb(22, 22, 22);
+        width: 230px;
+        margin-top: -15px;
+        margin-left: -10px;
+        border-radius: 10px;
+        padding: 20px 15px;
+       }
+       .cast > div > img{
+        border-radius: 50%;
+        height: 120px;
+       }
+       .cast > div{
+        color: white;
+        text-align: center;
+       }
+       .cast{
+        display: flex;
+        margin: 20px;
+        justify-content: space-around;
+       }
+       #about{
+        display: flex;
+       }
+       #about > div{
+        width: 25%;
+        padding: 20px;
+        line-height: 25px;
+        margin: 10px;
+        margin-left: -5px;
+        border-radius: 10px;
+        background-color: #333;
+       }
+       #about > div > p{
+        font-size: 18px;
+       }
+       #moviefooter{
+        background-color: #1f1f1f;
+        padding: 50px;
+        color: #fff;
+        line-height: 22px;
+       }
+       #moviefooter p{
+        color: #a3a3a3;
+       }
+       #info{
+        /* color: #dcdcdc; */
+        padding: 10px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+       }
+       #info > div{
+        width: 25%;
+       }
+       b{
+        color: #b9b7b7;
+       }
+       #endpart{
+    color: #8f8f8f;
+    margin-bottom: 80px;
+    padding: 10px;
+    background-color: #2d2d2d;
+}
+.endFlex{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+#divVedio{
+    position: absolute;
+    width: 100%;
+    background-color: #000;
+    height: 700px;
+    /* margin-top: 10px; */
+    visibility: hidden;
+    /* align-items: center; */
+}
+    </style> 
+
+    
+</head>
+<body>
+   
+    <div id="navbar">
+        <div id="navLogo">
+            <img class="mainLogo" src="imgs\verticle logo.png" alt="">
+        </div>
+        
+        
+        <div class="flex">
+            <div id="navSearch">
+                <img class="search" src="imgs\search.png" alt="">
+                <input id="searchIp" type="text" placeholder="Search">
+            </div>
+            <img id="profile"  src="https://img.icons8.com/material/512/user-male-circle--v1.png" alt="">
+       
+            <!-- <div onclick="show()" id="Signin">
+                <img  src="https://img.icons8.com/material/512/user-male-circle--v1.png" alt="">
+                <p>Sign In</p>
+            </div> -->
+        </div>
+        
+    </div>
+    <div id="divVedio"></div>
+    <div id="bgimg">
+    </div>
+    <div id="bgText">
+        
+        
+            <div class="freeTrial">
+                <p>7 Days free, then $99.00/month</p><br><br>
+
+                <div class="btnfree">Start Free Trial</div>
+                <div class="btnfree">+ Add to Up Next</div>
+            </div>
+            <div id="secondDiv">
+                <p>Insprid by the gripping true story of a man who would do anything for his family--- and for freedom. when Peter, an enslaved man, risks his life to escape and return to his family, he embartrs on a perilous journey of love and endurance.</p>
+                <div>
+
+                    Movie -2022 -2hr 
+            </div>
+            </div>
+
+            <div id="lastDiv">
+
+                <p><u>Staring</u> Will Smith, Ben Foster</p>
+                <p>Mustafa Shakir</p>
+                <p>Director Antroine Fuque</p>
+
+            </div>
+        </div>
+        
+    
+    <div id="afterbanner">
+
+            <div class="trailer" onclick="playVedio()">
+                <h2>Trailer</h2>
+                    <img id="trailerImg" alt="">
+                    <div id="trailerName"></div>
+            </div>
+            <hr class="vrline">
+            <div class="trailer">
+                <h2>Bonus</h2>
+                    <img src="https://is1-ssl.mzstatic.com/image/thumb/yXhlXOFkS9yJ1kMmOhfIbg/738x416.webp"  alt="">
+                    
+            </div>
+            <hr class="vrline">
+           
+
+
+
+            <h2 class="trailer">Most Popular</h2>
+
+            <div id="MostPopular" class="media-scroller snaps-inline">
+                
+                <div class="media-element"><img src="https://is2-ssl.mzstatic.com/image/thumb/GT66HoV8VJL1IZwaqos_TQ/738x416.webp"></div><div class="media-element"><img src="https://is5-ssl.mzstatic.com/image/thumb/lgskq6n1xkUI5DOyA5tWWQ/738x416.webp"></div><div class="media-element"><img src="https://is2-ssl.mzstatic.com/image/thumb/a_voEGGOjHGvUUhwrbStXQ/738x416.webp"></div><div class="media-element"><img src="https://is2-ssl.mzstatic.com/image/thumb/IZLh7W9XMi2iYTPqqFwRYg/738x416.webp"></div><div class="media-element"><img src="https://is4-ssl.mzstatic.com/image/thumb/C7vq4me467uKBCWL8QZA6g/738x416.webp"></div><div class="media-element"><img src="https://is1-ssl.mzstatic.com/image/thumb/kjrFHClZ3Bt-pT0MJnwdFw/738x416.webp"></div><div class="media-element"><img src="https://is2-ssl.mzstatic.com/image/thumb/78-I7VenST4ztZYfwMf6AQ/738x416.webp"></div><div class="media-element"><img src="https://is5-ssl.mzstatic.com/image/thumb/7SeRlnCzKlgeqrg6-ixkig/738x416.webp"></div></div>
+
+                <hr class="vrline">
+                <div class="trailer">
+                    <h2>How to Watch</h2>
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/DB8YqlVtN7M8YvGvgsP2eg/400x225.png"  alt="">
+                        <div id="watchTV">
+                            <b>Start Free Triel</b>
+                        </div>
+                        
+                </div>
+                <hr class="vrline">
+                <div class="cast">
+                    <div >
+                        <img src="https://is2-ssl.mzstatic.com/image/thumb/lm4QCFdQcMLOUvmVZ8QKlQ/492x492ve.webp" alt="">
+                        <br>
+                        <b>will Smith</b>
+                        <p>Peter</p>
+                    </div>
+                    <div >
+                        <img src="https://is2-ssl.mzstatic.com/image/thumb/-c0rdbhoaCiSkQDxFFqBGQ/492x492bb.webp" alt="">
+                        <br>
+                        <b>Ben Fahter</b>
+                        <p>Jim Festel</p>
+                    </div>
+                    <div >
+                        <img src="https://is3-ssl.mzstatic.com/image/thumb/a2x4jzYvVGXF-DI3MkJWbg/492x492ve.webp" alt="">
+                        <br>
+                        <b>Mustafa Shakhir</b>
+                        <p>adreise</p>
+                    </div>
+                    <div >
+                        <img src="https://is3-ssl.mzstatic.com/image/thumb/vyK_GL822raF8XWOQJUD4g/492x492bb.webp" alt="">
+                        <br>
+                        <b>Gilbert Owour</b>
+                        <p>Gordon</p>
+                    </div>
+                    <div >
+                        <img src="https://is4-ssl.mzstatic.com/image/thumb/ZXyIp7maq_vvFJfg0iG8bA/492x492bb.webp" alt="">
+                        <br>
+                        <b>Micheal Luwoye</b>
+                        <p>John</p>
+                    </div>
+                    <div >
+                        <img src="https://is2-ssl.mzstatic.com/image/thumb/i006es00dJQrFP0NpIb4aw/492x492bb.webp" alt="">
+                        <br>
+                        <b>Charmaine</b>
+                        <p>Doldienne</p>
+                    </div>
+                    <div >
+                        <img src="https://is3-ssl.mzstatic.com/image/thumb/cuB3vSVqvkRxPYj4K65qng/492x492bb.webp" alt="">
+                        <br>
+                        <b>Ponnie Gene</b>
+                        <p>Harrimgton</p>
+                    </div>
+                    <div >
+                        <img src="https://is5-ssl.mzstatic.com/image/thumb/wvQppunvd-ypNX6WirSXIw/492x492bb.webp" alt="">
+                        <br>
+                        <b>Grant Hervey</b>
+                        <p>Leeds</p>
+                    </div>
+                    
+                </div>
+    </div>
+    <div id="moviefooter">
+         <h2>About</h2>
+         <div id="about">
+            <div>
+                <h3>Emancipation</h3>
+                <p>DRAMA</p>
+                <p>Inspride by the gripping true story of a man who would do anything for his family and for freedom when peter, an enslaved man, riskd his life to</p>
+             </div>
+             <div>
+                <h3>16+</h3>
+                <p>COMMAN SENSE</p>
+                <p>Slavery era biopic has intense, gratutous violence.</p>
+             </div>
+         </div>
+         <hr class="vrline">
+         <div id="info">
+            <div>
+                <h2>Information</h2>
+                <br>
+                <b>Genre</b>
+                <p>Drama</p>
+                <br>
+
+                <b>Released</b>
+                <p>2022</p>
+                <br>
+
+                <b>Rated</b>
+                <p>A</p>
+                <br>
+
+                <b>Region of Origin</b>
+                <p>United States</p>
+            </div>
+            <div>
+                <h2>Languages</h2>
+                <br>
+                <b>Original Audio</b>
+                <p>English</p>
+                <br>
+
+                <b>Audio</b>
+                <p>English (AD, Dolby Atmos, Dolby, 5.1 AAc), and 9 more...</p>
+                <br>
+                <b>subtitles</b>
+                <p>English (CC, SDH) and 40 more...</p>
+            </div>
+            <div>
+                <h2>Accessibility</h2>
+                <br>
+                <p>Closed caption refer to subtitles in avaible. languages with the addition of relevent non- dialogue Information.</p>
+                <br>
+                <p>Audio description (AD) refer to a narrotion track describing what is happing on screen to provide context for those who are blinde or havelow vision.</p>
+            </div>
+         </div>
+         
+    </div>
+    <div id="endpart">
+        <p>Copyright 2022 Apple Inc. All rights reserved.</p>
+        <div class="endFlex">
+            <div>Internet Services Tems | Apple Tv & Privacy | Cookie Policy | Support</div>
+            <div>UNITED STATES</div>
+        </div>
+    </div>
+
+    <div id="myID" class="bottomMenu hide">
+   
+        <div>
+            <h3>ALL APPLE ORIGINAL.</h3>
+            <p>Start watching with  7 days Free Or 3 months free when buy an eligible Apple Devices</p>
+        </div>
+        <div>
+            <div class="videoText">
+                Start Free Trial
+                </div>
+                <p>7 days free, then $6.99/month</p>
+        </div>
+            
+    </div>s
+</body>
+</html>
+<script>
+    let movie = JSON.parse(localStorage.getItem("playMovie"));
+    console.log(movie);
+    let bgimg = document.getElementById("bgimg");
+    let trailerImg = document.getElementById("trailerImg");
+    trailerImg.src=movie.img
+    let trailerName = document.getElementById("trailerName").innerText=movie.name +" Trailer";
+    bgimg.style.backgroundImage = `url(${movie.img})`
+
+
+
+    
+myID = document.getElementById("myID");
+
+var myScrollFunc = function () {
+    var y = window.scrollY;
+    if (y >= 800) {
+        myID.className = "bottomMenu show"
+    } else {
+        myID.className = "bottomMenu hide"
+    }
+};
+
+
+
+window.addEventListener("scroll", myScrollFunc);
+
+
+
+function playVedio(){
+    let divVedio = document.getElementById("divVedio");
+    divVedio.style.visibility ="visible"
+    divVedio.innerHTML=null;
+    let iframe = document.createElement("iframe")
+    iframe.setAttribute("id","vedio");
+    iframe.frameBorder=0;
+    iframe.width="100%";
+    iframe.height="100%";
+    iframe.setAttribute("src",movie.embed);
+    divVedio.append(iframe)
+    // div.append(vedio)
+    // trailerImg.append(div)
+    // console.log(div);
+}
+
+
+
+</script>
