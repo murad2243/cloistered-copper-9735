@@ -1,0 +1,98 @@
+
+::-webkit-scrollbar {
+  height: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #a3a3a3; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255); 
+  border-radius: 10px;
+}
+
+.sechead{
+    font-family: "Times New Roman";
+
+    margin-top: 30px;
+    color: white;
+    padding: 40px;
+    background-color: #2d2d2d;
+}
+
+.media-scroller {
+  display: grid;
+  background-color: #333;
+
+  
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+
+
+
+.media-element {
+  display: grid;
+  background-color: #333;
+  /* grid-template-rows: min-content; */
+  margin: 10px;
+  border-radius: 10px;
+}
+.media-element > img:hover{
+  height: 90%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.media-element > img {
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
+.greyLine{
+    border-top: 1px solid #a3a3a3;
+    margin-bottom: 40px;
+}
+.title{
+    margin: 8px 0px;
+}
+
+#org > img{
+    width: 100%;
+    /* opacity: 0.6; */
+    height: 600px;
+}
+#org > p{
+  
+    margin: 10px;
+    color: #dbdada;
+}
+#shodow{
+    margin: 100px;
+    margin-top: -150px;
+}
+
+
+#Historical{
+  /* position: absolute; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: -230px;
+  opacity: 1;
+}
