@@ -266,7 +266,10 @@
    
     <div id="navbar">
         <div id="navLogo">
-            <img class="mainLogo" src="imgs\verticle logo.png" alt="">
+            <a href="index.html">
+                <img class="mainLogo" src="imgs\verticle logo.png" alt="">
+            </a>
+            
         </div>
         
         
@@ -478,12 +481,12 @@
                 <p>7 days free, then $6.99/month</p>
         </div>
             
-    </div>s
+    </div>
 </body>
 </html>
 <script>
     let movie = JSON.parse(localStorage.getItem("playMovie"));
-    console.log(movie);
+    // console.log(movie);
     let bgimg = document.getElementById("bgimg");
     let trailerImg = document.getElementById("trailerImg");
     trailerImg.src=movie.img

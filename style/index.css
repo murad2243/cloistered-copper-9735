@@ -28,12 +28,28 @@
             background-color: #a3a3a3;
         }
         #searchIp{
+            color: white;
             height: 20px;
             width: 130px;
             margin-left: 8px;
             background-color: #000;
             border: 0px black solid;
+            border-color: black;
         }
+        input[type=text] {
+            width: 100%;
+            /* padding: 12px 20px; */
+            /* margin: 8px 0; */
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+          }
+        input[type=text]:focus {
+            background-color: #000;
+            border: 3px solid #555;
+          }
         #navSearch{
             border: 1px white solid;
             border-radius: 5px;

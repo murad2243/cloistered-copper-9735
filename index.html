@@ -132,6 +132,7 @@
             width: 500px;
 
         } 
+
     </style>
     <link rel="stylesheet" href="style/slide.css">
     <link rel="stylesheet" href="style/index.css">
@@ -146,8 +147,14 @@
             
             <div class="flex">
                 <div id="navSearch">
-                    <img class="search" src="imgs\search.png" alt="">
-                    <input id="searchIp" type="text" placeholder="Search">
+                    <!-- <form action=""> -->
+                        <img class="search" src="imgs\search.png" alt="">
+                        <form action="" id="searchForm">
+                            <input id="searchIp" type="text" placeholder="Search">
+                            <div type="submit"></div>
+                        </form>
+                    <!-- </form> -->
+                    
                 </div>
                 <img id="profile"  src="https://img.icons8.com/material/512/user-male-circle--v1.png" alt="">
            
@@ -457,6 +464,9 @@
 </html>
 <script>
 
+
+
+
 myID = document.getElementById("myID");
 
 var myScrollFunc = function () {
@@ -477,12 +487,12 @@ window.addEventListener("scroll", myScrollFunc);
 
     function show(){
         singinPopup.style.visibility="visible"
-        console.log('asld');
+        // console.log('asld');
     }
 
     let signinBtn = document.getElementById("Signin");
     signinBtn.addEventListener("click",()=>{
-        console.log("cejc");
+        // console.log("cejc");
        
         singinPopup.style.visibility="visible"
     })
@@ -569,11 +579,11 @@ window.addEventListener("scroll", myScrollFunc);
                 btn.innerText="Sign In";
                 btn.setAttribute("class","submit")
                 btn.onclick = ()=>{
-                    console.log(signData);
+                    // console.log(signData);
                     console.log(Email.value, Password.value);
                     let check =false;
                      signData.forEach(el => {
-                        console.log(el);
+                        // console.log(el);
                     if(el.email == Email.value && el.password == Password.value){
                      check=true;
 

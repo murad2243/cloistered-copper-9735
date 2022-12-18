@@ -42,10 +42,28 @@ let premieres =[
     },
 
 ]
-console.log('ldksk');
+// console.log('ldksk');
 let media = document.getElementById("premiere");
 // media.innerHTML="asdsad"
 // console.log(media);
+
+let searchForm = document.getElementById("searchForm");
+searchForm.addEventListener("submit",(event)=>{
+    event.preventDefault();
+    console.log(searchForm.searchIp.value)
+    let checK = false;
+    premieres.forEach((move)=>{
+        if(searchForm.searchIp.value == move.name){
+            console.log(move)
+            localStorage.setItem("playMovie",JSON.stringify(move))
+            checK=true;
+        // console.log();
+        window.open("movies.html","_self")
+        }
+    });
+    
+})
+
 
 premieres.forEach((el)=>{
     let div = document.createElement("div");
@@ -55,7 +73,7 @@ premieres.forEach((el)=>{
     img.onclick = ()=>{
         localStorage.setItem("playMovie",JSON.stringify(el))
         // console.log();
-        window.open("movies.html")
+        window.open("movies.html","_self")
     }
     // let p =document.createElement("p");
     // p.innerText=el.name;
@@ -117,7 +135,7 @@ MostPopularData.forEach((element)=>{
     // p.setAttribute("class","title")
 
     div.append(img)
-console.log(div);
+// console.log(div);
     MostPopular.append(div)
 })
 
