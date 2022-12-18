@@ -5,195 +5,140 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chill TV</title>
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-        }
-        #maxWidth{
-            width: 1680px;
-            margin: auto;
-        }
-        #navbar{
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            width: 100%;
-            height: 45px;
-            margin: auto;
-            display: flex;
-            padding: 3px;
-            background-color: #000;
-            color: white;
-        }
-        .search{
-            height: 20px;
-            
-            background-color: #a3a3a3;
-        }
-        #searchIp{
-            height: 20px;
-            width: 130px;
-            margin-left: 8px;
-            background-color: #000;
-            border: 0px black solid;
-        }
-        #navSearch{
-            border: 1px white solid;
-            border-radius: 5px;
-            padding: 3px;
-            height: 23px;
-            margin-top: 5px;
-            width: fit-content;
-            display: flex;
-            background-color: #000;
-        }
-        .flex{
-            display: flex;
-            margin-right: 30px;
-            max-height: 40px;
-            justify-content: end;
-        }
-        #profile{
-            height: 25px;
-            border-radius: 50%;
-            margin-left: 10px ;
-            margin-top: 12px;
-        background-color: white;
-        visibility: hidden;
-        }
-        #Signin > img{
-            height: 25px;
-            border-radius: 50%;
-            margin: 3px ;
-            margin-top: 5px;
-        background-color: white;
-        }
-        #Signin{
-            cursor: pointer;
-            display: flex;
-            line-height: 35px;
-            background-color: #0a84ff;
-            border-radius: 10px;
-            height: 32px;
-            width: 80px;
-            padding: 0px 10px;
-            margin: 5px   ;
-        }
+    <link rel="icon" type="image/x-icon" href="imgs\chillTv.png">
     
-        #singinPopup{
-            z-index: 100;
-            visibility: hidden;
-            background-color: #333;
-            top: 10%;
-            left: 30%;
-            width: 30%;
+    <style>
+        
+        #WatchApple{
+            background-color: #000;
+            text-align: center;
+            color: white;
             padding: 50px;
             border-radius: 10px;
-            position: absolute;
-            align-items: center;
-            color: white;
-            line-height: 40px;
-            text-align: center;
+            line-height: 30px;
         }
-        .inbox{
-            height: 20px;
+        #WatchApple > a{
+            color: #409cff;
+        }
+        .vlogo{
             margin: 10px;
-            padding: 10px;
-            width: 60%;
-            border-radius: 5px;
-        }
-        #SignInForm > button{
-            height: 40px;
-        }
-        .submit:hover{
-            height: 40px;
-            width: 25%;
-        }
-        .submit{
-            margin: 10px 100px;
-            width: 25%;
-            border: #0a84ff 1px solid;
-            height: 32px;
+            height: 70px;
+            /* padding: 40px; */
             border-radius: 10px;
-            background-color: #0a84ff;
-            color: aliceblue;
+            /* border: 1px white solid; */
+            /* box-shadow: inset 0 0 20px #ffffff; */
         }
-        #creatId:hover{ 
-            font-weight: 800;
-        }
-        .mainLogo{
-            height: 40px;
-        }
-
-        #navLogo{
-            text-align: center;
-            width: 90%;
-        }
-
-
-
-        #hero{
-            visibility: hidden;
-            margin-top: 300px;
-            width: 100%;
-            /* height: 300px; */
-            background-image: linear-gradient(rgba(12,3,51,0.3),gba(12,3,51,0.3));
-            position: relative;
+        .productLogo{
+            width: 70%;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            
+            gap: 30px;
+            padding: 20px;
+            justify-content: space-around;
+            margin: auto;
         }
-        #hero > div{
-            color: white;
-            width: 80%;
-            display: flex;
-            gap: 50px;
-            justify-content: space-between;
-            height: auto;
-            position: absolute;
-            margin-top: 500px;
-            text-align: center;
-            font-size: large;
-            /* padding: 20px 8%; */
-         
-           
+        .watchElement{
+            height: 70px;
         }
+        .Devices{
+            line-height: 20px;
+        }
+        .Devices > p{
+            color: rgb(167, 166, 166);
+        }
+        .Devices > img{
+            height: 70px;
+        }
+
         
-        .back-video{
-           
-            width: 100%;
-            position: absolute;
-            z-index: -100;
-        }
-        .videoText{
-            background-color: white;
-            color: black;
-            border-radius: 10px;
-            margin: 10px;
-            width: 180px;
-            cursor: pointer;
+.bottomMenu {
+    position: fixed;
+    bottom: 0;
+    color: white;
+    line-height: 25px;
+    width: 98%;
+    height: 40px;
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between;
+    /* border-top: 1px solid #000; */
+    background: #262629;
+    z-index: 1;
+    transition: all .5s;
+}
+.hide {
+    opacity:0;
+   
+}
+.show {
+    opacity:1;
+  
+}
+.dropdown {
+    /* margin-left: 10%; */
+  /* position: relative; */
+  display: inline-block;
+  margin: 30px 0 10px 0;
+  font-size: 25px;
+  
+}
+
+.dropdown-content {
+  display: none;
+  width: 96%;
+  padding: 12px 16px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  font-size: 16px;
+  font-weight: 100;
+}
+#qna{
+    color: white;
+    width: 80%;
+    margin: 100px auto;
+    /* margin-bottom: 200px; */
+}
+#qna > h1{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 50px;
+}
+.qnahead{
+    width: 100%;
+    /* background: #262629; */
+    border: 1px solid #636363;
+    /* height: -5px; */
+}
+#endpart{
+    color: #8f8f8f;
+    margin-bottom: 100px;
+}
+.endFlex{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnfree{
+            /* position: static; */
+            height: 80px;
+            margin-top: 80px;
             padding: 10px;
-            font-weight: 800;
-        }
-        .info{
-            margin-top: 30px;
-            text-align: left;
-        }
-        #banners{
-            width: 100%;
-            overflow: hidden;
-            height: 600px;
-            position: absolute;
-            margin-top: -300px;
-            background-size: 100% 800px;
-            background-repeat: no-repeat;
-        }
+            margin: 10px;
+            border-radius: 5px;
+            background-color: aliceblue;
+            color: #000;
+            width: 500px;
+
+        } 
+
     </style>
+    <link rel="stylesheet" href="style/slide.css">
+    <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
-    <div id="maxwidth">
+    <div class="maxwidth">
         <div id="navbar">
             <div id="navLogo">
                 <img class="mainLogo" src="imgs\verticle logo.png" alt="">
@@ -202,8 +147,14 @@
             
             <div class="flex">
                 <div id="navSearch">
-                    <img class="search" src="imgs\search.png" alt="">
-                    <input id="searchIp" type="text" placeholder="Search">
+                    <!-- <form action=""> -->
+                        <img class="search" src="imgs\search.png" alt="">
+                        <form action="" id="searchForm">
+                            <input id="searchIp" type="text" placeholder="Search">
+                            <div type="submit"></div>
+                        </form>
+                    <!-- </form> -->
+                    
                 </div>
                 <img id="profile"  src="https://img.icons8.com/material/512/user-male-circle--v1.png" alt="">
            
@@ -237,7 +188,7 @@
             
             <video class="back-video" autoplay loop muted plays-inline>
                 
-                <source class="vedio" src="https://rr4---sn-npoe7nsl.googlevideo.com/videoplayback?expire=1671057199&ei=z_qZY-GwBsOFvdIPm4ClwAg&ip=216.131.114.102&id=o-AMS4o-efHDzHqtqY7E1zKyxQhsHpLk_ZvrnHN-EXagX4&itag=135&aitags=133%2C134%2C135%2C136%2C137%2C160%2C242%2C243%2C244%2C247%2C248%2C278%2C394%2C395%2C396%2C397%2C398%2C399&source=youtube&requiressl=yes&spc=zIddbKqYfeVqOmE9e4BNA2DSJwTDzjs&vprv=1&mime=video%2Fmp4&ns=RRLJqgOZrZJ2J6cfmiZeD5wK&gir=yes&clen=2291336&dur=68.067&lmt=1620023164314131&keepalive=yes&fexp=24001373,24007246&c=WEB&txp=5535434&n=g4zY4GyUbzjSDg&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cspc%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIgEeiXqtSmeqPIbZg4mj7J55_BIlvtvmfhQTtSOcSwA_8CIQDN-7OLVd8oR78qJFkL91knxF2OapSDIB2dyhr9iYR2Sg%3D%3D&redirect_counter=1&cm2rm=sn-4g5e6y7e&req_id=a797d2f35852a3ee&cms_redirect=yes&cmsv=e&mh=Bg&mip=2409:4071:d8d:b8e1:b9d7:96c4:21f3:5033&mm=34&mn=sn-npoe7nsl&ms=ltu&mt=1671036297&mv=m&mvi=4&pl=48&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgBbUG_DMmnCNXQ6LotQxznyrFjNSSF-tReKQGsxn3lhUCIAIniKb_T9B6X5J_iuEgjuVgDpQYdfuf8K8yk9S9Xoo9" type="video/mp4">
+                <source class="vedio" src="imgs\backgoundVideo.m4v" type="video/mp4">
             </video> 
             <div>
                 
@@ -254,29 +205,294 @@
                     <p class="info">Imagine Charles Dickens’ heartwarming tale of a scrooge visited by four ghosts on Christmas Eve—but funnier. And with Will Ferrell, Ryan Reynolds, and Octavia Spencer. Also, huge musical numbers. Okay, we’re asking a lot. Maybe just watch the trailer?</p>
                 </div>
             </div>
-        </div> 
-
-        <div id="banners">
-
         </div>
 
+        <div id="banners">
+            <img src="https://is3-ssl.mzstatic.com/image/thumb/Features112/v4/bb/2c/ae/bb2cae80-b4e9-7193-8a4f-fb1129ad59ca/278c3382-c095-47b3-ba19-d82887d8b13a.png/999x562sr.jpg" class="bimg" alt="">
+        </div>
+        <div id="bannersInfo">
+            <h1>The Home of </h1>
+            <h1>Apple</h1>
+            <h1>Originals</h1>
+            <p>Enjoy star-studded, award-winning series, films, and more</p>
+            <h1>
+                <u>Start Free Trial</u>
+            </h1>
+            
+        </div>
+        <!-- <div style="margin-top: 900px;"></div>  -->
+
     </div>
+<div id="aftervideo">
+</div>
+
+<div class="sechead">
+    <h2 >Watch Premieres for Free</h2>
+    <div id="premiere" class="media-scroller snaps-inline">
+      </div>
+      <hr class="greyLine">
+      <h2>Most Popular</h2>
+      <div id="MostPopular" class="media-scroller snaps-inline">
+    </div>
+    <hr class="greyLine">
+
+    <h2>Watch Entire Seasons</h2>
+      <div id="EntireSeasons" class="media-scroller snaps-inline">
+    </div>
+    <hr class="greyLine">
+    <h2>Latest Originals</h2>
+      <div id="Originals" class="media-scroller snaps-inline">
+    </div>
+    <hr class="greyLine">
+    <h2>Current Hits & Future Releases</h2>
+      <div id="Hits" class="largediv media-scroller snaps-inline">
+    </div>
+    <hr class="greyLine">
+
+    <div id="org">
+        
+        <img src="https://is5-ssl.mzstatic.com/image/thumb/QnWMQBmtlqcc1VUOzAyR6Q/1679x945sr.webp" alt="">
+        
+        
+    </div>
+    
+
+    
+      <div id="Historical" class="media-scroller snaps-inline">
+    </div>
+    <hr class="greyLine">
+     
+    <div id="WatchApple">
+        <img class="vlogo" src="imgs\color bg.png" alt="">
+        <h1>Watch Apple TV+ here or anywhere</h1>
+        <p>Find Apple TV+ on the Apple TV app, avaible on Apple Devices, smart TVs, and more.</p>
+
+        <a href="">See all supported Devices</a>
+        <div class="productLogo">
+            <div>
+                <img class="watchElement" src="https://tv.apple.com/assets/icons/product_landing_apple_tv_wht-2d0f1bf87f69645b296f58815bae784c.png" alt="">
+                <h3>Apple TV</h3>
+            </div>
+            <div>
+                <img class="watchElement" src="https://tv.apple.com/assets/icons/product_landing_iPhone_wht-8ef88627a27c66699f368cc429cc94a8.png" alt="">
+                <h3>iPhone</h3>
+            </div>
+            <div>
+                <img class="watchElement" src="https://tv.apple.com/assets/icons/product_landing_iPad_wht-ac93596ed7aeb5e1c15ba18bcb7bfd13.png" alt="">
+                <h3>iPad</h3>
+            </div>
+            <div>
+                <img class="watchElement" src="https://tv.apple.com/assets/icons/product_landing_mac_wht-37e6f73080a15fe8a35b85e7ba8f5468.png" alt="">
+                <h3>Mac</h3>
+            </div>
+            <div>
+                <img class="watchElement" src="https://tv.apple.com/assets/icons/product_landing_airplay_wht-f348507fa5bdc6b005b126f0654aa663.png" alt="">
+                <h3>AirPlay</h3>
+            </div>
+
+
+        </div>
+        <b>See it on your bug screen</b>
+        <br>
+        <a href="">set up your device </a>
+        <br>
+        <a href="">Explore compatible devices </a>
+        <br>
+
+        <div class="productLogo">
+            <div class="Devices">
+                <img src="https://tv.apple.com/assets/icons/banner_usb_lrg_wht-67ed29cf6e5f5add9b2814937f976197.png" alt="">
+                <br>
+                <b>Streaming Devices</b>
+                <p>Roku</p>
+                <p>Fire TV</p>
+                <p>Google Tv</p>
+                <p>Android Tv</p>
+            </div>
+            <div class="Devices">
+                <img src="https://tv.apple.com/assets/icons/banner_tv_lrg_wht-e0ef12292435df4d9416312f322dbe32.png" alt="">
+                <br>
+                <b>Smart TVs</b>
+                <p>Samsung</p>
+                <p>Lg</p>
+                <p>VIZIO</p>
+                <p>Sony</p>
+            </div>
+            <div class="Devices">
+                <img src="https://tv.apple.com/assets/icons/banner_controller_lrg_wht-5eca7993879258c2ff5e8425055643b6.png" alt="">
+                <br>
+                <b>Gaming Consoles</b>
+                <p>PlayStation</p>
+                <p>Xbox</p>
+            </div>
+        </div>
+        <p>Devices avaiblity within by country or region. </p>
+    </div>
+
+    <div id="qna">
+
+        <h1>Questions? Answers.</h1>
+       
+        <div class="dropdown">
+            <div >What is Apple TV+?</div>
+            
+            <div class="dropdown-content">
+              <p>Apple TV+ is atreaming services from apple. It Features exclusive Apple Original show and movies from some of the include top talent, with new Premieres arriviing each month. Browse all of the available content on Apple TV+ inside the Apple +tv app an the "Apple on the tab or here on" </p>
+            </div>
+          </div>
+          <br>
+          <hr class="qnahead">
+          <div class="dropdown" >
+            <div >What does Apple TV+ include</div>
+            
+            <div class="dropdown-content">
+              <p>Apple TV+ includes Apple Original films and series—which are original shows and movies made exclusively for Apple. It also includes free access for anyone to watch Friday Night Baseball, provided through Apple TV+ in partnership with MLB (Major League Baseball). New shows and movies are being added to the streaming service often, so browse inside the Apple TV app or visit" </p>
+            </div>
+          </div>
+          <hr class="qnahead">
+          <div class="dropdown" >
+            <div> Where can I watch Apple TV+ </div>
+            
+            <div class="dropdown-content">
+              <p>Apple TV+ is an exclusive streaming subscription available in the Apple TV app. You can find Apple TV app on many of your favorite Apple devices. Plus, find the app on  </p>
+            </div>
+          </div>
+          <hr class="qnahead">
+          <div class="dropdown" >
+            <div> Can I watch Apple TV+ on my phone </div>
+            
+            <div class="dropdown-content">
+              <p>Apple TV+ is a streaming service that lives inside the Apple TV app—an app that brings Apple TV+ together with  </p>
+            </div>
+          </div>
+          <hr class="qnahead">
+          <div class="dropdown" >
+            <div> How to watch Apple TV+ on Android or Windows</div>
+            
+            <div class="dropdown-content">
+              <p>Apple TV+ is a streaming service that lives inside the Apple TV app—an app that brings Apple TV+ together with  </p>
+            </div>
+          </div>
+          <hr class="qnahead">
+          <div class="dropdown" >
+            <div> What movies are on Apple TV+?</div>
+            
+            <div class="dropdown-content">
+              <p>There are many movies to choose from on Apple TV+ and new Apple Original films are being added frequently. The best way to see what movies are on Apple TV+ is to browse the Apple TV+ tab inside the Apple TV app or here on  You'll find many award-winning films to choose from, like Academy Award-winner for Best Picture CODA or the critically-acclaimed The Tragedy of Macbeth. Or choose from hits like Greyhound, Swan Song, Wolfwalkers, and more. </p>
+            </div>
+          </div>
+          <hr class="qnahead">
+          <div class="dropdown" >
+            <div> What can I watch on Apple TV+?</div>
+            
+            <div class="dropdown-content">
+                <p>More Apple&nbsp;Original series are being added to the TV app frequently, so check back often to discover new TV shows on Apple&nbsp;TV+. Start by browsing in the Apple&nbsp;TV+ tab on the Apple&nbsp;TV app or here on. You'll find hits like the Emmy-winning Ted Lasso, critically-acclaimed The Morning Show, and sci-fi epic Foundation, plus new and popular shows like Severance, Slow Horses, and WeCrashed.</p>
+            </div>
+          </div>
+          <hr class="qnahead">
+
+          <div class="dropdown" >
+            <div> How do I get Apple TV+?</div>
+            
+            <div class="dropdown-content">
+                <p>More Apple&nbsp;Original series are being added to the TV app frequently, so check back often to discover new TV shows on Apple&nbsp;TV+. Start by browsing in the Apple&nbsp;TV+ tab on the Apple&nbsp;TV app or here on. You'll find hits like the Emmy-winning Ted Lasso, critically-acclaimed The Morning Show, and sci-fi epic Foundation, plus new and popular shows like Severance, Slow Horses, and WeCrashed.</p>
+            </div>
+          </div>
+          <hr class="qnahead">
+          <div class="dropdown" >
+            <div> Can I get Apple TV+?</div>
+            
+            <div class="dropdown-content">
+                <p>There are a few ways to try Apple&nbsp;TV+ for free. First, try 7 days of Apple&nbsp;TV+ for free by starting a trial in the Apple&nbsp;TV app on your iPhone, iPad, Apple&nbsp;TV&nbsp;4K or HD, or on any streaming device. If you’ve recently purchased Apple hardware that includes a 12-month, 6-month, or 3-month or other complimentary free trial of Apple&nbsp;TV+, this offer will automatically appear in the Apple&nbsp;TV app when signed in with the Apple&nbsp;ID associated with your recent hardware purchase.</p>
+            </div>
+          </div>
+          <hr class="qnahead">
+          <div class="dropdown" >
+            <div> How do I cancel Apple TV+?</div>
+            
+            <div class="dropdown-content">
+                <p>The easiest way to cancel an Apple&nbsp;TV+ subscription is to go to Settings on an Apple device like an iPhone. Open the app, choose your name, then select Subscriptions and choose Apple&nbsp;TV+. You can also manage your Apple&nbsp;TV+ subscription atSign in and choose the account icon in the top right corner.</p>
+            </div>
+          </div>
+          <hr class="qnahead">
+          <div class="dropdown" >
+            <div> How do I share Apple TV+ with my Family ?</div>
+            
+            <div class="dropdown-content">
+                <p>Sharing Apple&nbsp;TV+ through the Apple&nbsp;TV app uses Family&nbsp;Sharing, Apple’s system that helps you to share multiple Apple&nbsp;Services through your Apple&nbsp;ID. First, you need to  then you will be able to share Apple&nbsp;TV+ with your family group.</p>
+            </div>
+          </div>
+          <hr class="qnahead">
+          <div class="dropdown" >
+            <div> Is Apple TV+ accessible?</div>
+            
+            <div class="dropdown-content">
+                <p>Apple&nbsp;TV+ is part of the Apple&nbsp;TV app, which includes many accessibility features—so you only have to focus on enjoying Apple&nbsp;Original shows and movies. All Apple&nbsp;Originals support Closed Captions and SDH (subtitles for the Deaf and Hard of Hearing) in addition to audio descriptions; plus the entire app supports VoiceOver, Apple’s built-in screenreader. Bold Text, Increase Contrast, and Reduce Motion settings are also available. Subtitles are supported for 40+ languages for all Apple&nbsp;TV+ titles.</p>
+            </div>
+          </div>
+          <hr class="qnahead">
+
+    </div>
+    
+         <div id="endpart">
+        <p>Copyright 2022 Apple Inc. All rights reserved.</p>
+        <div class="endFlex">
+            <div>Internet Services Tems | Apple Tv & Privacy | Cookie Policy | Support</div>
+            <div>UNITED STATES</div>
+        </div>
+    </div>
+</div>
+
    
+<div id="myID" class="bottomMenu hide">
+   
+    <div>
+        <h3>ALL APPLE ORIGINAL.</h3>
+        <p>Start watching with  7 days Free Or 3 months free when buy an eligible Apple Devices</p>
+    </div>
+    <div>
+        <div class="videoText">
+            Start Free Trial
+            </div>
+            <p>7 days free, then $6.99/month</p>
+    </div>
+        
+</div>
+    
 </body>
+<script src="js/data.js"></script>
 </html>
 <script>
+
+
+
+
+myID = document.getElementById("myID");
+
+var myScrollFunc = function () {
+    var y = window.scrollY;
+    if (y >= 800) {
+        myID.className = "bottomMenu show"
+    } else {
+        myID.className = "bottomMenu hide"
+    }
+};
+
+window.addEventListener("scroll", myScrollFunc);
+
+
     let singinPopup = document.getElementById("singinPopup");
     let checkSign = false;
 
 
     function show(){
         singinPopup.style.visibility="visible"
-        console.log('asld');
+        // console.log('asld');
     }
 
     let signinBtn = document.getElementById("Signin");
     signinBtn.addEventListener("click",()=>{
-        console.log("cejc");
+        // console.log("cejc");
        
         singinPopup.style.visibility="visible"
     })
@@ -363,11 +579,11 @@
                 btn.innerText="Sign In";
                 btn.setAttribute("class","submit")
                 btn.onclick = ()=>{
-                    console.log(signData);
+                    // console.log(signData);
                     console.log(Email.value, Password.value);
                     let check =false;
                      signData.forEach(el => {
-                        console.log(el);
+                        // console.log(el);
                     if(el.email == Email.value && el.password == Password.value){
                      check=true;
 
@@ -420,12 +636,29 @@ let bannerImg =[
 
 let count=0;
 let hero = document.getElementById("hero");
-setInterval(()=>{
-    banners.style.backgroundImage =`url(${bannerImg[count]})`;
+let aftervideo = document.getElementById("aftervideo")
+let ban= setInterval(()=>{
+    banners.innerHTML=null
+    let img = document.createElement("img")
+    img.src= bannerImg[count];
+    img.setAttribute("class","bimg");
+    banners.append(img)
+    // banners.style.backgroundImage =`url(${bannerImg[count]})`;
     count++;
-    if(count==4){
+    if(count==6){
         hero.style.visibility="visible"
+        aftervideo.style.height= "700px";
         banners.style.visibility= "hidden"
+        // banners.style.margin = " 10px"
+        clearInterval(ban);
+        count=0;
+
+        
     }
-},2000)
+},3000)
+
+
+
+
+
 </script>
